@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="https://bushbot.org/" />
+    <meta name="twitter:creator" content="@bushdrooler" />
+    <meta name="twitter:title" content="The Bushbot" />
+    <meta name="twitter:description" content="You can donate images or donate funds to keep the bushbot going." />
+    <meta name="twitter:image" content="https://bushbot.org/social-image.png" />
+    <link rel="canonical" href="https://bushbot.org/" />
+
+
+
+
+    <meta property="og:title" content="The Bushbot" />
+    <meta property="og:url" content="https://bushbot.org/" />
+    <meta property="og:site_name" content="bushbot.org/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="Tools" />
+    <meta property="og:description" content="You can donate images or donate funds to keep the bushbot going" />
+    <meta property="og:image" content="https://bushbot.org/social-image.png" />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="720" />
+    <meta property="og:image:alt" content="@bushdrooler" />
+    <meta property="og:image:type" content="image/jpeg" />
+
+
+
+
+    <title>Bushbot</title>
+</head>
+
+<script>
+    var u = location.href;
+    if (!u.match(/bushbot\.org/ig)) {
+        // location.assign(`https://bushbot.org/`);
+    }
+</script>
+
+<body>
+    <style>
+        * {
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+
+        html {
+            background: #000000a6;
+
+        }
+
+        .tb {
+            font-size: 14px;
+            padding: 15px 30px;
+            margin: 15px 0px;
+            border-radius: 7px;
+            /* box-shadow: rgb(73 167 223) 0px 5px; */
+            overflow: hidden;
+            text-decoration: none;
+            width: 282px;
+        }
+
+        button,
+        .bt {
+            font-family: inherit;
+            border-width: initial;
+            border-style: none;
+            border-color: initial;
+            font-size: 14px;
+            color: rgb(255, 255, 255);
+            background: rgb(92, 188, 246);
+            cursor: pointer;
+            padding: 15px 30px;
+            margin: 15px 0px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            outline: none;
+            position: relative;
+            transition: all 0.3s;
+            border-radius: 7px;
+            box-shadow: rgb(73 167 223) 0px 5px;
+            overflow: hidden;
+            text-decoration: none;
+        }
+
+        .previewSquare {
+            height: 120px;
+            width: 120px;
+        }
+
+
+        @media all and (max-width:500px) {
+            .previewSquare {
+                height: 80px;
+                width: 80px;
+            }
+        }
+    </style>
+
+    <div style="max-width:1000px; padding:20px;text-align:left;margin:auto;">
+        <div style="margin:auto;">
+            <div id="bdbb">
+                <div id="main">
+                    <a href="./" id="homeLink"><img src="botlogo.svg" style="width: 188px; cursor:pointer;"></a>
+                    <p id="userMessage"></p>
+                    <div id="navvy"></div>
+
+
+                    <div id="info">
+                        <h1>Welcome</h1>
+                        <!-- <p>Bushbot scans the internet for hairy bush pics.</p> -->
+                        <p>You can <a href="donatephotos/">donate images</a> or <a href="donatefunds/">donate funds</a>
+                            to
+                            keep the bushbot going.</p>
+                        <!-- <p>Follow <a href="https://twitter.com/bushdrooler" target="_blank">@bushdrooler</a> to see what he has found!</p> -->
+
+                        <p> <!--The Bushbot requires resources to operate consistently. Server space, automated posting,
+                        development labor - these all take resources. A $5 donation from a fraction of twitter users
+                        will allow the bushbot to greatly increase output. If twitter problems continue, the bushbot may
+                        need to operate independently, so drop your email in the box for notifications (we don't send
+                        spam)
+                       All donors at the $5 dollar+ (USD) level who contribute before the end of 2022 will automatically convert to lifetime members when Bushbot service starts in 2023.</p>
+                    <p>We can't guarentee exactly what the Bushbot premium service is going to look like when it launches, but if you like the Bushbot and posts from @bushdrooler, we are pretty sure it's going to be worth $5.</p>-->
+                        <p>If you can't donate money or pics right now, that's fine. Bushbot will continue to be active
+                            on
+                            twitter for as long as we can keep the lights on around here.</p>
+                        <p>We also have an <b><a style="color:#55ACEE" href="/donatephotos/">image uploader/donate
+                                    area</a></b> where followers can upload some of their favorite retro pics or self
+                            pics.
+                        </p>
+                    </div>
+                    <div id="showMedia"></div>
+                    <script src="topnav.js"></script>
+                    <script id="megawidget">
+                        var phrases = `vagina,hairy,bushy,hirsute,bush,pubic-hair,hairy-lips,hairy-asshole,pussy,hairy-pussy,mega-bush,huge-bush,armpitfetish,armpitlovers,hairywoman,hairyarmpits,bush,hairypussy,hairy-pussy-pictures-blog,body-hair,naturally-hairy,giant-hairy-bush,brown-triangle`.split(",");
+
+                        var el = document.getElementById('homeLink');
+                        el.href = "/?theme=" + shuffle(phrases)[0];
+
+
+                        var p = shuffle('012'.split(''))[0];
+                        if (p == "0") {
+                            // location.assign('/museum/bundlePics/');
+                        }
+
+
+                        var u = location.href;
+                        if (u.match(/https/ig)) {
+                            var n = u.replace(/https\:/ig, `http:`)
+                            location.assign(n);
+                        }
+
+
+                        if (location.href.match(/\?m=/)) {
+                            var m = location.href.replace(/[\s\S]+=/, '');
+                            m = decodeURI(m);
+                            document.getElementById('userMessage').innerHTML = m;
+                        }
+
+
+
+
+
+
+
+                        var boxSize = 120;
+                        var imgNumber = 32;
+
+                        var idsToRemove = ["1072196455715270656", "1194718796541505539", "1237841954467016706", "1068594748263415808", "1030972322080014338", "834775925598334976", "954356531444764672", "1252410452824342530", "1053294861045116928", "1154037014313889794", "834779109276397568", "835165051673849857"];
+
+
+
+
+                        function showTweetsByDate() {
+                            var out = '';
+                            droolScrape.sort((a, b) => (a.t > b.t) ? 1 : -1);
+                            for (let a of droolScrape) {
+                                out += `${a.t} ; ${a.id}<br>`;
+                            }
+                            document.body.innerHTML = out;
+                        }
+
+                        if (sessionStorage.droolScrape) {
+                            droolScrape = JSON.parse(sessionStorage.droolScrape);
+                            console.log(`cached in sessionStorage.droolScrape`);
+                            showMedia();
+                        }
+
+                        var today = new Date().toString();
+                        var endpoint = `/shard/`;
+                        endpoint = `bushBase.json?date=${today}`;
+
+                        if (location.href.match(/mega/)) {
+                            delete sessionStorage.droolScrape;
+                            endpoint = `megaMix.json?date=${today}`;
+                        }
+
+                        if (!sessionStorage.droolScrape) {
+                            fetch(endpoint)
+                                .then(r => {
+                                    return r.text()
+                                })
+                                .then(a => {
+                                    console.log('got fetch');
+                                    var out = '';
+                                    //a = a.replace(/"([0-9]+)"/ig,"$1"); // creates pure integers
+                                    var ds = JSON.parse(a);
+                                    window.droolScrape = [];
+                                    var i = 0;
+                                    for (let a of ds) {
+                                        if (a.images.length > 0 && idsToRemove.indexOf(a.id) == -1) {
+                                            window.droolScrape.push(a);
+                                        } else {
+                                            i++;
+                                        }
+                                    }
+                                    dedupeandsort();
+                                    console.log(`${window.droolScrape.length} is the droolScrape length.`);
+                                    console.log(`${i} tweets removed because no image were found.`);
+                                    showMedia();
+                                });
+                        }
+
+                        function sort2017() {
+                            var arr = [];
+                            for (let a of droolScrape) {
+                                if (a.t.match(/^2017/)) {
+                                    arr.push(a)
+                                }
+                            }
+                            window.droolScrape = arr;
+                            showMedia();
+                        }
+
+
+
+
+                        // search filters
+                        // to search by date: https://bushbot.org/?date=2023-07-04
+                        // to search by date: https://bushbot.org/?date=2023-07
+                        // to search by date: https://bushbot.org/?date=2023
+                        // to search by name: https://bushbot.org/?search=170701749
+
+
+                        function pickNextDate(year) {
+                            year = year.trim();
+                            var yyyy = year.split('-')[0];
+                            var mm = year.split('-')[1];
+                            var dd = year.split('-')[2];
+                            if (year.length == 4) {
+                                year = (+year) + 1;
+                                return year;
+                            }
+                            if (year.length == 7) {
+                                if (mm == '12') {
+                                    yyyy = (+yyyy) + 1;
+                                    return `${yyyy}-01`;
+                                }
+                                mm = (+mm) + 1;
+                                return `${yyyy}-${mm}`;
+                            }
+                            if (year.length == 10) {
+                                if (dd == '31') {
+                                    if (mm == "12") {
+                                        yyyy = (+yyyy) + 1;
+                                        return `${yyyy}-01-01`;
+                                    }
+                                    mm = (+mm) + 1;
+                                    if (mm < 10) {
+                                        mm = `0${mm}`;
+                                    }
+                                    return `${yyyy}-${mm}-01`;
+                                }
+                                var dd = (+dd) + 1;
+                                if (dd < 10) {
+                                    dd = `0${dd}`;
+                                }
+                                return `${yyyy}-${mm}-${dd}`;
+                            }
+                        }
+
+
+                        function get30DaysFromNow(year) {
+                            var days30 = Date.parse(year) + 2.592e+9;
+                            var d3 = new Date(days30);
+                            var month = d3.getMonth() + 1;
+                            var dd = d3.getDate();
+                            if (dd < 10) {
+                                dd = `0${dd}`;
+                            }
+                            if (month < 10) {
+                                month = `0${month}`;
+                            }
+                            return `${d3.getFullYear()}-${month}-${dd}`
+                        }
+
+
+
+                        function showMedia() {
+                            document.getElementById('userMessage').innerHTML = ``;
+                            var out = '';
+
+                            if (location.href.match(/\?date/) && !location.href.match(/l=/)) {
+                                var year = location.href.replace(/[\S\s]+=/, '').trim();
+                                imgNumber = 100;
+                                var nextDate = pickNextDate(year);
+                                var re = new RegExp('^' + year, 'g');
+                                var arr = [];
+                                for (let a of droolScrape) {
+                                    if (a.t.match(re)) {
+                                        arr.push(a)
+                                    }
+                                }
+
+
+
+                                var dayblock = `https://twitter.com/search?q=from%3Abushdrooler%20since%3A${year}%20until%3A${get30DaysFromNow(year)}&src=typed_query&f=top`;
+                                document.getElementById('mssg').innerHTML = `${arr.length} matched ${year}. <a href="?date=${year}" style="color:white;">${year}</a> next up: 
+                                                    <a href="?date=${nextDate}" style="color:white;">${nextDate}</a>
+                                                    <a href="${dayblock}"
+                                                    target="_blank" style="color:white;">30 day block</a>
+                                                    <br>`;
+                                window.droolScrape = arr;
+                                document.title += ` Search ${year}`;
+                            }
+                            if (location.href.match(/\?search/)) {
+                                imgNumber = 100;
+                                var search = location.href.replace(/[\S\s]+=/, '').trim();
+                                var re = new RegExp(search, 'g');
+                                var arr = [];
+                                for (let a of droolScrape) {
+                                    if (a.id.match(re)) {
+                                        arr.push(a)
+                                    }
+                                }
+                                document.getElementById('mssg').innerHTML = `${arr.length} matched ${search}. <a href="?search=${search}" style="color:white;">${search}</a><br>`;
+                                window.droolScrape = arr;
+                                document.title += ` Search ${search}`;
+                            }
+                            shuffle(droolScrape);
+                            if (droolScrape.length < imgNumber) {
+                                imgNumber = droolScrape.length;
+                            }
+                            if (localStorage.jester) { // localStorage.jester=1;
+                                localStorage.visits = '0';
+                            }
+                            if (!localStorage.visits) {
+                                localStorage.visits = '0';
+                            } else {
+                                localStorage.visits = +localStorage.visits + 1;
+                            }
+                            for (var i = 0; i < imgNumber; i++) {
+                                var imcol = droolScrape[i].images;
+                                var photo = shuffle(imcol)[0];
+                                var url = `https://pbs.twimg.com/media/${photo}?format=jpg`;
+                                //var url = `photos/${photo}`;
+                                var link = droolScrape[i].id;
+                                var fpay = btoa(`${link}***${url}`);
+                                var flink = `?focus=${fpay}`;
+                                flink = `//twitter.com/Bushdrooler/status/${link}`;
+
+                                if (localStorage.visits > 10) {
+                                    //  flink = `/museum/`;
+                                }
+                                out += `<div title="${droolScrape[i].t} " onclick="window.open('${flink}')" class="previewSquare ${droolScrape[i].id}" style="background: url('${url}') center center / cover; display: inline-block; margin: auto;cursor:pointer;"></div>`;
+                            }
+                            document.getElementById('showMedia').innerHTML = out;
+                            if (location.href.match(/\?focus=/)) {
+                                var m = location.href.replace(/[\s\S]+focus=/, '');
+                                var link = atob(m).split('***')[0];
+                                var url = atob(m).split('***')[1];
+                                console.log(`showAd('${link}','${url}')`);
+                                showAd(link, url);
+                            }
+                        }
+
+                        function syncImage(photo) {
+                            document.body.innerHTML += `<img style="display:none" src="sync.php?get=${photo}">`
+                        }
+
+                        function shuffle(a) {
+                            var c = a.length,
+                                t, r;
+                            while (0 !== c) {
+                                r = Math.floor(Math.random() * c);
+                                c -= 1;
+                                t = a[c];
+                                a[c] = a[r];
+                                a[r] = t;
+                            }
+                            return a;
+                        }
+
+
+
+
+
+                        function showAd(link, url) {
+                            gurl = "/museumad003.jpg";
+                            var b1
+                            var b1 = [` 
+                                                     <button onclick="location.assign('/')" style="margin:15px;">Load random pics </button>`,
+
+                                ` 
+                                                    <button onclick="location.assign('/museum/')" style="margin:15px;">museum</button>`,
+
+                                `
+                                                    <button onclick="window.open('https://twitter.com/Bushdrooler/status/${link}')" style="margin:15px;">photo on twitter</button>`
+                            ];
+
+                            var f = shuffle(b1);
+
+                            var bout = '';
+                            for (let a of b1) {
+                                bout += a;
+                            }
+
+                            document.getElementById('userMessage').innerHTML = `
+                                                <div id="featuredImage" style=" text-align: center; ">
+                                                <a href="/museum/"><img src="${url}" style="max-width: 820px;border-radius:10px"></a>
+                                                </div>
+                    
+                                                <div id='boutButtons' style=" text-align: center; ">${bout}</div>
+                                                    
+                                                <div>
+                                                   <a href="/museum/"><img src="${gurl}" style="width:100%;max-width:1000px;border-radius:10px;"></a>
+                                                   </div>
+                                                
+                                                `;
+                            document.getElementById("main").scrollIntoView();
+                            // return;
+                            // var target = link.replace(/[\s\S]+\//, '');
+                            // window.open(`/help-support/?imageTarget=${target}`);
+                            // return;
+                            // var a = shuffle(`125`.split(''))[0];
+                            // if (a=='5') {
+                            //     var ad = generateAd();
+                            //     var target = link.replace(/[\s\S]+\//,'');
+                            //     var spacer = `<br><br>`;
+                            //     window.open(`/help-support/?imageTarget=${target}`);
+                            // } else {
+                            //     window.open(`https://twitter.com/Bushdrooler/status/${link}`);
+                            // }
+                        }
+
+                        function generateAd() {
+                            return `<a href="/donatephotos/"><img src="/bushbot-promo012.png"></a>`;
+                        }
+                    </script>
+                    <p>Thanks for the support!</p>
+                    <p><img src="botlogo.svg" style="width:20px;"> Team Bushbot</p>
+
+                    <form id="form1" method="post" action="/sync.php">
+                        <h2>Sign up for updates</h2>
+
+                        Email: <br><input class="tb" name="email" type="email" required maxlength="300">
+                        <br><br> <input type="submit" value="add me" class="bt">
+                    </form>
+                    <br><br>
+                    <i>We will only send updates when new features are announced.</i>
+                    <br><br>
+                    <br><br>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function resetChallenge() {
+            document.cookie = "jsSupport=; expires=31 Dec 2028 12:00:00 UTC; path=/";
+            location.assign("?reset");
+        }
+
+
+
+
+        function dedupeandsort() {
+            var arr = [];
+            var reduced = [];
+            for (let a of droolScrape) {
+                if (arr.indexOf(a.id) == -1) {
+                    arr.push(a.id);
+                    reduced.push(a);
+                }
+            }
+            reduced.sort((a, b) => (a.t > b.t) ? 1 : -1);
+            window.droolScrape = reduced;
+            sessionStorage.droolScrape = JSON.stringify(droolScrape);
+            console.log('reduced and stored');
+        }
+
+
+
+        function launchTweet() {
+            var t = shuffle(droolScrape)[0].id;
+            var l = `https://twitter.com/Bushdrooler/status/` + t;
+            window.open(l);
+        }
+
+        function shuffle(a) {
+            var c = a.length,
+                t, r;
+            while (0 !== c) {
+                r = Math.floor(Math.random() * c);
+                c -= 1;
+                t = a[c];
+                a[c] = a[r];
+                a[r] = t;
+            }
+            return a;
+        }
+    </script>
+    <script src="fix.js"></script>
+
+
+
+
+
+
+</body>
+
+</html>
