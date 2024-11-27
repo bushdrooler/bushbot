@@ -4,19 +4,24 @@ Click button.<br>
 </div>
 </div>
 
-<button onclick="location.assign('/')" style="background: rgb(36, 92, 125);">Reload pics</button>
-<button onclick="location.assign('donatefunds/')">Donate</button>
-<button onclick="location.assign('donatephotos/')">Add Photos</button>
-<button onclick="location.assign('#form1')">Join Mail List</button>
-<button onclick="location.assign('donatephotos/')">Selfie</button>
+<button onclick="showMedia()" style="background: rgb(36, 92, 125);">Reload pics</button>
+<button onclick="updateInfo()">Donate</button>
+<button onclick="updateInfo()">Add Photos</button>
+<button onclick="updateInfo()">Join Mail List</button>
+<button onclick="updateInfo()">Selfie</button>
 
 <button onclick="location.assign('//twitter.com/bushdrooler')">Twitter</button>
-<button style="display:none" onclick="location.assign('/museum/')">Museum</button>
+<button style="display:none" onclick="updateInfo()">Museum</button>
 <div id="mssg"></div>
 </section>
 
 
 `;
+
+function updateInfo() {
+    var message = `<h3>You can donate funds, donate images, join the mailing list, and inquire about the museum by emailing bushdrooler@gmail.com. Thanks!</h3>`;
+    document.getElementById('info').innerHTML = message;
+}
 //<button onclick="launchTweet()">Random</button>
 
 document.getElementById('navvy').innerHTML = navBar;
