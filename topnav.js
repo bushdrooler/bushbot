@@ -8,7 +8,7 @@ Click button.<br>
 <button onclick="updateInfo()">Donate</button>
 <button onclick="updateInfo()">Add Photos</button>
 <button onclick="updateInfo()">Join Mail List</button>
-<button onclick="updateInfo()">Selfie</button>
+<button onclick="location.assign('/api/')">api</button>
 
 <button onclick="location.assign('//twitter.com/bushdrooler')">Twitter</button>
 <button style="display:none" onclick="updateInfo()">Museum</button>
