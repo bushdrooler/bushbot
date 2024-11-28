@@ -1,1 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bushbot api</title>
+</head>
+
+<body>
+    <div id="main" style="font-family: monospace; font-size: 12px;">
+
+    </div>
+
+
+    <script>
+
+        fetch(`../bushBase.json`)
+            .then(r => {
+                return r.text()
+            })
+            .then(a => {
+                document.getElementById(`main`).innerHTML = a;
+            });
+    </script>
+</body>
+
+</html>
