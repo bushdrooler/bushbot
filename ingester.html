@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bushBase ingester</title>
+</head>
+
+<style>
+    * {
+        font-family: 'Segoe UI', sans-serif;
+    }
+</style>
+
+<body>
+    <div id="main">
+        <h1>bushBase ingester</h1>
+
+        <textarea name="" id="newb" cols="30" rows="10"></textarea>
+
+
+        <br>
+        <button onclick="merge()">merge</button> <button onclick="download()">download</button>
+
+    </div>
+
+    <div id="msg"></div>
+    <div id="m2"></div>
+
+    <script>
+
+        fetch("bushBase.json")
+            .then(response => {
+                return response.text()
+            })
+            .then(a => {
+                window.oldData = JSON.parse(a);
+                gid("m2").innerHTML = `window.oldData length: ${window.oldData.length}`;
+            });
+
+
+        function download() {
+            if (arr.length < 4) {
+                alert('problem parseing json');
+                return;
+            }
+            var j = JSON.stringify(arr);
+            var m = [];
+            m[0] = j;
+            var myBlob = new Blob(m, { type: 'text/html' });
+            var blobUrl = URL.createObjectURL(myBlob);
+            var link = document.createElement("a");
+            link.href = blobUrl;
+            link.download = "bushBase.json";
+            link.click();
+        }
+
+
+        function merge() {
+            var obj = {};
+            window.newData = JSON.parse(gid('newb').value.trim());
+            if (newData.length < 4) {
+                alert('problem parseing json');
+                return;
+            }
+            for (let a of newData) {
+                obj[a.id] = a;
+            }
+            for (let a of oldData) {
+                obj[a.id] = a;
+            }
+            var arr = [];
+            for (let a in obj) {
+                arr.push(obj[a]);
+            }
+            arr.sort((a, b) => (a.t > b.t) ? 1 : -1);
+            window.arr = arr;
+            gid('newb').value = JSON.stringify(arr);
+            console.log(`newData is ${newData.length}`);
+            console.log(`oldData is ${oldData.length}`);
+            console.log(`arr is ${arr.length}`);
+            var diff = arr.length - oldData.length;
+            msg.innerHTML = `${diff} new ids added.`;
+            window.arr = arr;
+        }
+
+        function gid(id) {
+            return (document.getElementById(id));
+        }
+
+
+    </script>
+</body>
+
+</html>
