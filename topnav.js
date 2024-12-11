@@ -6,9 +6,9 @@ Click button.<br>
 
 <button onclick="showMedia()" style="background: rgb(36, 92, 125);">Reload pics</button>
 <button onclick="updateInfo()">Donate</button>
-<button onclick="updateInfo()">Add Photos</button>
+<button onclick="rapidFire()">Rapid fire</button>
 <button onclick="updateInfo()">Join Mail List</button>
-<button onclick="location.assign('/api/')">api</button>
+<button onclick="location.assign('bushBase.json')">api</button>
 
 <button onclick="location.assign('//twitter.com/bushdrooler')">Twitter</button>
 <button style="display:none" onclick="updateInfo()">Museum</button>
