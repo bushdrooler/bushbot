@@ -41,9 +41,7 @@
     // if (!u.match(/bushbot\.org/ig)) {
     //      location.assign(`https://bushbot.org/`);
     // }
-
     //https://bushdrooler.github.io/bushbot/
-
     // location.assign(`https://bushdrooler.github.io/bushbot/`);
 </script>
 
@@ -537,6 +535,37 @@
             }
             return a;
         }
+
+
+        function saveCollection() {
+            var arr = [];
+            for (let a of document.getElementsByClassName('previewSquare')) {
+                var obj = {};
+                obj.t = a.title;
+                obj.id = a.classList[1];
+                obj.images = [];
+                obj.images[0] = a.outerHTML.match(/media\/[\s\S]+\?/ig)[0].replace("media\/", '').replace("?", '');
+                arr.push(obj);
+            }
+            var text = JSON.stringify(arr);
+            var m = [];
+            m[0] = text;
+            var myBlob = new Blob(m, { type: 'text/html' });
+            var blobUrl = URL.createObjectURL(myBlob);
+            var link = document.createElement("a");
+            link.href = blobUrl;
+            link.download = "bushbot-collection.json";
+            link.click();
+        }
+
+        function loadCollection() {
+            sessionStorage.droolScrape = prompt('paste the json string here');
+            window.reload;
+        }
+
+
+
+
     </script>
     <script src="fix.js"></script>
 
